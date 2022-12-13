@@ -6,14 +6,17 @@ permissions:
   id-token: write
   contents: read
 
+
 jobs:
-    first-job:
+    az-login:
+      steps:
+      run: az login
+    token-auth:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
           with:
             path: repo
-        run: az login
         - uses: azure/login@v1
           with:
              client-id: ${{ secrets.AZURE_CLIENT_ID }} 
