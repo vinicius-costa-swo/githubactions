@@ -8,9 +8,6 @@ permissions:
 
 
 jobs:
-    az-login:
-      steps:
-      run: az login
     token-auth:
       runs-on: ubuntu-latest
       steps:
